@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Redirect</title>
+</head>
+<body>
+    <h1>Welcome to QR Redirect!</h1>
+    <p>Click the link below to continue:</p>
+    <a href="https://s.shopee.vn/3VWdzy4ICS">Go to Affiliate Link</a>
+    <p>If you don't want to visit the affiliate link, you will be redirected back to the map in a few seconds...</p>
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";  // This will redirect after a few seconds
+        }, 5000);  // 5000 ms = 5 seconds
+    </script>
+</body>
+</html>
