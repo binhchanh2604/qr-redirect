@@ -1,19 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Redirect</title>
+    <title>Chuyển Hướng Về Bản Đồ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .loading {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to QR Redirect!</h1>
-    <p>Click the link below to continue:</p>
-    <a href="https://s.shopee.vn/3VWdzy4ICS">Go to Affiliate Link</a>
-    <p>If you don't want to visit the affiliate link, you will be redirected back to the map in a few seconds...</p>
+    <div class="container">
+        <h1>Chào mừng bạn đến với trò chơi săn mã QR!</h1>
+        <p>Để tiếp tục, vui lòng nhấn vào liên kết dưới đây:</p>
+        <a id="affiliate-link" href="https://s.shopee.vn/3VWdzy4ICS" target="_blank">Click vào đây để xem bản đồ</a>
+        <div class="loading">
+            <p>Chuyển hướng trong <span id="countdown">2</span> giây...</p>
+        </div>
+        <div class="message">
+            <p>Bạn sẽ được chuyển đến bản đồ sau khi xem liên kết.</p>
+        </div>
+    </div>
+
     <script>
-        setTimeout(function() {
-            window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";  // This will redirect after a few seconds
-        }, 5000);  // 5000 ms = 5 seconds
+        // Lấy countdown element
+        const countdownElement = document.getElementById("countdown");
+
+        // Set thời gian đếm ngược
+        let countdown = 2;
+
+        // Chạy đếm ngược mỗi giây
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            // Khi hết thời gian, tự động chuyển hướng
+            if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://your-map-link.com"; // Chuyển đến bản đồ
+            }
+        }, 1000);
+
+        // Khi người dùng click vào link, mở affiliate link
+        document.getElementById("affiliate-link").addEventListener("click", function() {
+            // Mở link affiliate
+            window.open(this.href, "_blank");
+        });
     </script>
 </body>
 </html>
