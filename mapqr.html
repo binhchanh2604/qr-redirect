@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xem Bản Đồ QR Hunting</title>
+    <title>QR Hunting Challenge</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -77,8 +77,10 @@
             // Mở link affiliate trong tab mới
             window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
 
-            // Chuyển hướng trang hiện tại đến Google Maps
-            window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
+            // Chuyển hướng đến bản đồ sau 1 giây
+            setTimeout(() => {
+                window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
+            }, 1000);
         }
     </script>
 </body>
