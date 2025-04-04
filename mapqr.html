@@ -65,16 +65,16 @@
 <body>
     <div class="container">
         <h1>📍 Định vị kho báu QR!</h1>
-        <p>Nhấn vào nút bên dưới để xem bản đồ và bắt đầu hành trình!</p>
+        <p>Nhấn vào nút bên dưới để được chuyển hướng đến liên kết affiliate trước. Sau khi quay lại từ Shopee, bạn sẽ được đưa đến bản đồ!</p>
 
-        <button class="map-btn" onclick="redirectToAffiliate()">🗺️ Click vào đây để xem bản đồ</button>
+        <button class="map-btn" onclick="redirectToAffiliate()">🗺️ Xem bản đồ vị trí các mã QR</button>
 
         <div class="note">*Sau khi mở liên kết quay lại để được chuyển hướng đến bản đồ.</div>
     </div>
 
     <script>
         function redirectToAffiliate() {
-            // Mở link affiliate trong tab mới
+            // Mở liên kết affiliate Shopee
             const affiliateWindow = window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
 
             // Kiểm tra khi người dùng đóng hoặc quay lại trang affiliate
