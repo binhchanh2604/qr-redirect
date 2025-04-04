@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Hunting Challenge</title>
     <style>
-        body {
+        html, body {
+            height: 100%;
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -85,7 +85,7 @@
         <p>💡 Giải được câu đố? Chúc mừng! Nhưng hành trình chưa dừng lại đâu… Bạn sẽ nhận được một mã QR mới, chứa câu đố tiếp theo – thử thách tiếp theo – một mảnh ghép khác trong chuyến đi săn kho báu của bạn.</p>
         <p>🚦 Các mã QR sẽ xuất hiện ở những vị trí dừng đèn đỏ khắp thành phố, cụ thể trong bản đồ bên dưới!</p>
 
-        <button class="map-btn" onclick="redirectToAffiliate()">🗺️ Xem bản đồ vị trí các mã QR</button>
+        <a href="javascript:void(0);" class="map-btn" onclick="redirectToAffiliate()">🗺️ Xem bản đồ vị trí các mã QR</a>
 
         <div class="note">*Sau khi mở liên kết quay lại để được chuyển hướng đến bản đồ.</div>
 
