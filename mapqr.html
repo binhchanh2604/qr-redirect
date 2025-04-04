@@ -1,78 +1,113 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuyển Hướng Về Bản Đồ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Hunting Challenge</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
 
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
+    h1 {
+      color: #1a1a1a;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-        .message {
-            margin-top: 20px;
-            color: #555;
-        }
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #444;
+      margin-bottom: 20px;
+    }
 
-        .loading {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-    </style>
+    a {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #ff5722;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #e64a19;
+    }
+
+    .loading {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    #countdown {
+      font-weight: bold;
+      color: #ff5722;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Chào mừng bạn đến với trò chơi săn mã QR!</h1>
-        <p>Để tiếp tục, vui lòng nhấn vào liên kết dưới đây:</p>
-        <a id="affiliate-link" href="https://s.shopee.vn/3VWdzy4ICS" target="_blank">Click vào đây để xem bản đồ</a>
-        <div class="loading">
-            <p>Chuyển hướng trong <span id="countdown">2</span> giây...</p>
-        </div>
-        <div class="message">
-            <p>Bạn sẽ được chuyển đến bản đồ sau khi xem liên kết.</p>
-        </div>
+  <div class="container">
+    <h1>🎯 Bạn đã sẵn sàng bước vào thử thách chưa?</h1>
+    <h2>QR Hunting Challenge đang chờ bạn khám phá bí mật...</h2>
+
+    <a id="affiliate-link" href="https://s.shopee.vn/3VWdzy4ICS" target="_blank">🔍 Click vào đây để xem bản đồ</a>
+
+    <div class="loading">
+      Đang chuyển hướng trong <span id="countdown">2</span> giây...
     </div>
 
-    <script>
-        // Lấy countdown element
-        const countdownElement = document.getElementById("countdown");
+    <div class="note">
+      *Bạn sẽ được chuyển đến bản đồ sau khi xem liên kết.
+    </div>
+  </div>
 
-        // Set thời gian đếm ngược
-        let countdown = 2;
+  <script>
+    const countdownElement = document.getElementById("countdown");
+    let countdown = 2;
 
-        // Chạy đếm ngược mỗi giây
-        const interval = setInterval(() => {
-            countdown--;
-            countdownElement.textContent = countdown;
+    // Đếm ngược
+    const interval = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
 
-            // Khi hết thời gian, tự động chuyển hướng
-            if (countdown <= 0) {
-                clearInterval(interval);
-                window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing"; // Chuyển đến bản đồ
-            }
-        }, 1000);
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
+      }
+    }, 1000);
 
-        // Khi người dùng click vào link, mở affiliate link
-        document.getElementById("affiliate-link").addEventListener("click", function() {
-            // Mở link affiliate
-            window.open(this.href, "_blank");
-        });
-    </script>
+    // Khi người dùng nhấp vào link, mở link affiliate
+    document.getElementById("affiliate-link").addEventListener("click", function(event) {
+      event.preventDefault(); // Ngăn mặc định
+      window.open(this.href, "_blank"); // Mở affiliate link
+    });
+  </script>
 </body>
 </html>
