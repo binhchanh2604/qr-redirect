@@ -68,11 +68,19 @@
     <h1>🎯 Chào mừng đến với QR Hunting Challenge!</h1>
     <p>Trò chơi truy tìm kho báu qua QR đang chờ bạn khám phá...</p>
 
-    <a href="mapqr.html">
-      <button class="start-btn">🚀 Bắt đầu ngay!</button>
-    </a>
+    <button class="start-btn" onclick="startGame()">🚀 Bắt đầu ngay!</button>
 
     <div class="note">*Hãy sẵn sàng cho những thử thách đầy bất ngờ!</div>
   </div>
+
+  <script>
+    function startGame() {
+      // Mở link affiliate trong tab mới
+      window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
+
+      // Chuyển hướng đến mapqr.html
+      window.location.href = "mapqr.html";
+    }
+  </script>
 </body>
 </html>
