@@ -67,20 +67,24 @@
         <h1>📍 Định vị kho báu QR!</h1>
         <p>Nhấn vào nút bên dưới để xem bản đồ và bắt đầu hành trình!</p>
 
-        <button class="map-btn" onclick="redirectToMap()">🗺️ Click vào đây để xem bản đồ</button>
+        <button class="map-btn" onclick="redirectToAffiliate()">🗺️ Click vào đây để xem bản đồ</button>
 
-        <div class="note">*Click vào link và quay lại đây để được chuyển hướng đến map.</div>
+        <div class="note">*Sau khi mở liên kết quay lại để được chuyển hướng đến bản đồ.</div>
     </div>
 
     <script>
-        function redirectToMap() {
+        function redirectToAffiliate() {
             // Mở link affiliate trong tab mới
-            window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
+            const affiliateWindow = window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
 
-            // Chuyển hướng đến bản đồ sau 2 giây
-            setTimeout(() => {
-                window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
-            }, 2000);
+            // Kiểm tra khi người dùng đóng hoặc quay lại trang affiliate
+            const interval = setInterval(function() {
+                if (affiliateWindow.closed) {
+                    // Khi người dùng đóng tab affiliate, chuyển hướng đến bản đồ
+                    window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
+                    clearInterval(interval); // Ngừng kiểm tra khi chuyển hướng xong
+                }
+            }, 100);  // Kiểm tra mỗi 100ms để phát hiện khi nào người dùng đóng tab
         }
     </script>
 </body>
