@@ -1,8 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <meta http-equiv="refresh" content="0; url=mapqr.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Hunting Challenge</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1, h2 {
+            color: #1a1a1a;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+
+        .instructions {
+            margin-top: 40px;
+        }
+
+        .instructions ul {
+            text-align: left;
+            margin: 20px auto;
+            list-style-type: disc;
+        }
+
+        .instructions li {
+            font-size: 16px;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="container">
+        <h1>🔥 QRHuntingGame - Giải Mã Kho Báu 🏆</h1>
+        <p>Chào mừng bạn đến với trò chơi săn mã QR đầy bí ẩn! Sẵn sàng bước vào cuộc phiêu lưu ly kỳ, tìm kiếm phần thưởng chưa?</p>
+
+        <h2>Phần thưởng & Cách chơi</h2>
+        <p>Mỗi câu đố sẽ có thời gian thay đổi và phần thưởng cho ba người chiến thắng đầu tiên. Cùng tham gia ngay!</p>
+
+        <div class="instructions">
+            <h2>Cách chơi:</h2>
+            <ul>
+                <li>Quét mã QR để bắt đầu cuộc săn tìm!</li>
+                <li>Giải câu đố, tìm đáp án ẩn trong hình ảnh hoặc chuỗi câu hỏi.</li>
+                <li>Nhận mã QR mới hoặc mật mã nhận thưởng sau mỗi câu đố.</li>
+                <li>Hoàn thành trò chơi và nhận quà hấp dẫn!</li>
+            </ul>
+        </div>
+
+        <button class="btn" onclick="redirectToMap()">🗺️ Click vào đây để xem bản đồ</button>
+
+        <div class="note">*Click vào link và quay lại để được chuyển hướng đến map.</div>
+    </div>
+
+    <script>
+        function redirectToMap() {
+            // Mở link affiliate trong tab mới
+            window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
+
+            // Chuyển hướng đến bản đồ sau 2 giây
+            setTimeout(() => {
+                window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing";
+            }, 2000);
+        }
+    </script>
+
 </body>
 </html>
