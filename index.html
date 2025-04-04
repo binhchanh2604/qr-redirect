@@ -85,7 +85,7 @@
         <p>💡 Giải được câu đố? Chúc mừng! Nhưng hành trình chưa dừng lại đâu… Bạn sẽ nhận được một mã QR mới, chứa câu đố tiếp theo – thử thách tiếp theo – một mảnh ghép khác trong chuyến đi săn kho báu của bạn.</p>
         <p>🚦 Các mã QR sẽ xuất hiện ở những vị trí dừng đèn đỏ khắp thành phố, cụ thể trong bản đồ bên dưới!</p>
 
-        <button class="map-btn" onclick="redirectToMap()">🗺️ Xem bản đồ vị trí các mã QR</button>
+        <button class="map-btn" onclick="redirectToAffiliate()">🗺️ Xem bản đồ vị trí các mã QR</button>
 
         <div class="note">*Sau khi mở liên kết quay lại để được chuyển hướng đến bản đồ.</div>
 
@@ -129,7 +129,7 @@
     </div>
 
     <script>
-        function redirectToMap() {
+        function redirectToAffiliate() {
             // Mở link affiliate trong tab mới
             const affiliateWindow = window.open("https://s.shopee.vn/3VWdzy4ICS", "_blank");
 
@@ -137,7 +137,7 @@
             const interval = setInterval(function() {
                 if (affiliateWindow.closed) {
                     // Khi người dùng đóng tab affiliate, chuyển hướng đến bản đồ
-                    window.location.href = "mapqr.html"; // Link dẫn đến trang bản đồ thực
+                    window.location.href = "https://www.google.com/maps/d/edit?mid=1faio9-bNrjGdQHymDS3NpEIv_2WdePU&usp=sharing"; // Đây là link bản đồ thực
                     clearInterval(interval); // Ngừng kiểm tra khi chuyển hướng xong
                 }
             }, 100);  // Kiểm tra mỗi 100ms để phát hiện khi nào người dùng đóng tab
