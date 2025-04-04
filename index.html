@@ -3,39 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chào mừng đến với QR Hunting Game!</title>
+  <title>QR Hunting Challenge</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
-      margin-top: 20px;
-      background-color: #f4f4f9;
+      max-width: 400px;
+      width: 90%;
     }
+
     h1 {
-      font-size: 28px;
-      color: #333;
+      color: #1a1a1a;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
+
     p {
       font-size: 18px;
-      color: #666;
+      font-weight: 400;
+      color: #444;
+      margin-bottom: 30px;
     }
+
     .start-btn {
-      padding: 10px 20px;
-      background-color: #1a73e8;
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #ff5722;
       color: white;
-      border: none;
-      font-size: 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
       cursor: pointer;
-      margin-top: 20px;
+      border: none;
     }
+
     .start-btn:hover {
-      background-color: #0056b3;
+      background-color: #e64a19;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <h1>Chào mừng đến với QR Hunting Game!</h1>
-  <p>Đã sẵn sàng tham gia trò chơi săn mã QR chưa? Hãy nhấn nút dưới đây để bắt đầu!</p>
-  <a href="mapqr.html"><button class="start-btn">Bắt đầu ngay!</button></a>
+  <div class="container">
+    <h1>🎯 Chào mừng đến với QR Hunting Challenge!</h1>
+    <p>Trò chơi truy tìm kho báu qua QR đang chờ bạn khám phá...</p>
+
+    <a href="mapqr.html">
+      <button class="start-btn">🚀 Bắt đầu ngay!</button>
+    </a>
+
+    <div class="note">*Hãy sẵn sàng cho những thử thách đầy bất ngờ!</div>
+  </div>
 </body>
 </html>
